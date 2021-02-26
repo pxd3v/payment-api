@@ -13,11 +13,11 @@ defmodule RocketpayWeb.AccountsController do
     end
   end
 
-  # def deposit(connection, params) do
-  #   with {:ok, %User{} = user} <- Rocketpay.create_user(params) do
-  #     connection
-  #     |> put_status(:created)
-  #     |> render("create.json", user: user)
-  #   end
-  # end
+  def withdraw(connection, params) do
+    with {:ok, %Account{} = account} <- Rocketpay.withdraw(params) do
+      connection
+      |> put_status(:ok)
+      |> render("update.json", account: account)
+    end
+  end
 end

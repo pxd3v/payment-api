@@ -1,5 +1,5 @@
 defmodule Rocketpay.CreateTest do
-  use Rocketpay.DataCase
+  use Rocketpay.DataCase, async: true
 
   alias Rocketpay.Users.Create
   alias Rocketpay.User
